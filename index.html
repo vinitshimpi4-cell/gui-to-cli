@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AWS GUI to CLI: Ravi's S3 Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>From Console clicks to terminal commands</h1>
+  <div class="ctl">
+    <button id="prev">Previous</button><button id="auto" aria-pressed="false">Auto-play</button><button id="next">Next</button><button id="reset">Reset</button><button id="theme" aria-label="Toggle light or dark mode">Theme</button>
+  </div>
+</header>
+<div class="layout">
+  <nav id="steps" aria-label="Steps"></nav>
+  <main>
+    <div class="stage">
+<svg id="dia" viewBox="0 0 1100 620" role="img" aria-label="Diagram of Ravi using the AWS Console and an EC2 terminal to reach Amazon S3">
+<defs>
+ <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#2a3f6b"/></pattern>
+ <path id="p1" d="M60,70 L190,58"/>
+ <path id="p2" d="M360,200 C600,235 800,260 900,395"/>
+ <path id="p4" d="M200,235 C250,300 330,340 410,385"/>
+ <path id="p7" d="M600,255 L480,520"/>
+ <path id="p8a" d="M360,100 C500,40 650,30 790,85"/>
+ <path id="p8b" d="M790,150 L725,390"/>
+ <path id="p9a" d="M600,345 L630,215"/>
+ <path id="p9b" d="M710,180 L800,110"/>
+ <path id="p10a" d="M710,205 C780,290 860,330 920,400"/>
+ <path id="p10b" d="M850,470 L728,440"/>
+</defs>
+<rect width="1100" height="620" fill="#0b1630"/><rect width="1100" height="620" fill="url(#dots)"/>
+
+<g class="s" data-s="1">
+ <rect x="20" y="30" width="340" height="200" rx="10" fill="#10264f" stroke="#4da3ff" stroke-width="2"/>
+ <rect x="20" y="30" width="340" height="26" rx="10" fill="#1d4fa0"/>
+ <text x="34" y="48" class="t">AWS Management Console (browser)</text>
+ <rect x="36" y="68" width="190" height="24" rx="6" fill="#0b1630" stroke="#4da3ff"/><text x="46" y="85" class="t">🔍 Search services…</text>
+ <rect x="238" y="68" width="108" height="24" rx="6" fill="#0b1630" stroke="#4da3ff"/><text x="246" y="85" class="t">ap-south-1 ▾</text>
+ <text x="36" y="125" class="t">Account: 123456789012 (example)</text>
+ <text x="36" y="150" class="t">Recently visited · Services · Billing</text>
+ <text x="36" y="205" class="t" fill="#9fc6ff">GUI = buttons and screens</text>
+ <circle cx="70" cy="272" r="16" fill="#f1c9a5"/><rect x="48" y="290" width="44" height="40" rx="10" fill="#4da3ff"/><rect x="100" y="296" width="52" height="34" rx="4" fill="#243b6b" stroke="#9fc6ff"/>
+ <text x="48" y="352" class="t">Ravi + laptop</text>
+ <text x="50" y="62" font-size="20">🖱️<animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></text>
+</g>
+
+<g class="s" data-s="2">
+ <rect x="800" y="380" width="280" height="215" rx="12" fill="#0f3a2e" stroke="#3ddc97" stroke-width="2"/>
+ <text x="816" y="405" class="t" font-weight="800">Amazon S3 (cloud warehouse)</text>
+ <text x="816" y="570" class="t" fill="#8ff0c4">Bucket list: (empty)</text>
+ <path d="M360,200 C600,235 800,260 900,395" fill="none" stroke="#4da3ff" stroke-width="2" stroke-dasharray="6 6"/>
+ <text font-size="20">🖱️<animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></text>
+</g>
+
+<g class="s" data-s="3">
+ <rect x="830" y="425" width="220" height="62" rx="8" fill="#14624a" stroke="#3ddc97"/>
+ <text x="842" y="448" class="t">📦 ravi-cloud-storage-demo-2026</text>
+ <text x="842" y="470" class="t" fill="#8ff0c4">Region ap-south-1 · Public access: blocked</text>
+ <text x="816" y="570" class="t" fill="#8ff0c4" style="display:none"> </text>
+ <text x="816" y="525" class="t" fill="#cfe">Name must be globally unique;</text>
+ <text x="816" y="543" class="t" fill="#cfe">change it if taken.</text>
+</g>
+
+<g class="s" data-s="4">
+ <rect x="400" y="300" width="340" height="290" rx="12" fill="#3a2410" stroke="#ff9a3c" stroke-width="2"/>
+ <text x="414" y="322" class="t" font-weight="800">EC2: Ravi-CLI-Server</text>
+ <g class="t">
+  <text x="416" y="360">Name: Ravi-CLI-Server</text><text x="416" y="380">AMI: Amazon Linux 2023</text>
+  <text x="416" y="400">Type: free-tier-eligible, if shown</text><text x="416" y="420">Key pair: ravi-key (.pem)</text>
+  <text x="416" y="440">Security group: SSH TCP 22</text><text x="416" y="460">Source: My IP only</text>
+ </g>
+ <path d="M200,235 C250,300 330,340 410,385" fill="none" stroke="#4da3ff" stroke-width="2" stroke-dasharray="6 6"/>
+ <text font-size="20">🖱️<animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion></text>
+</g>
+
+<g class="s" data-s="5">
+ <rect x="410" y="336" width="320" height="156" rx="6" fill="#050a14" stroke="#ff9a3c"/>
+ <text id="term" class="m" x="418" y="354"></text>
+ <rect x="560" y="304" width="170" height="18" rx="9" fill="#ff9a3c"/>
+ <text x="568" y="317" class="t" fill="#1b0f04" font-weight="800">Pending → Running</text>
+ <text x="418" y="508" class="t" fill="#ffc78a">Connect: EC2 Instance Connect or SSH</text>
+</g>
+
+<g class="s" data-s="6">
+ <rect x="418" y="518" width="150" height="10" rx="5" fill="#2b1c0c"/>
+ <rect x="418" y="518" width="150" height="10" rx="5" fill="#ff9a3c"><animate attributeName="width" values="0;150;150" dur="3s" repeatCount="indefinite"/></rect>
+ <text x="418" y="548" class="t" fill="#ffc78a">dnf: check, download, install updates</text>
+</g>
+
+<g class="s" data-s="7">
+ <rect x="590" y="508" width="136" height="62" rx="8" fill="#3a1f66" stroke="#b07bff" stroke-width="2"/>
+ <text x="602" y="535" class="t" font-weight="800">AWS CLI v2</text><text x="602" y="555" class="t" fill="#d6bfff">translator</text>
+ <path d="M600,255 L480,520" stroke="#b07bff" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+ <text font-size="20">📦<animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p7"/></animateMotion></text>
+</g>
+
+<g class="s" data-s="8">
+ <rect x="780" y="30" width="290" height="150" rx="12" fill="#2a2a10" stroke="#ffd34d" stroke-width="2"/>
+ <text x="796" y="56" class="t" font-weight="800">🛡️ IAM (security department)</text>
+ <text x="796" y="82" class="t">User: ravi-cli-user (least privilege)</text>
+ <text x="796" y="102" class="t">Needs: s3:ListAllMyBuckets</text>
+ <text x="796" y="124" class="t" fill="#ffe58a">Access Key ID: YOUR_ACCESS_KEY_ID</text>
+ <text x="796" y="144" class="t" fill="#ffe58a">Secret: ●●●●●●●● (never shown)</text>
+ <text x="796" y="166" class="t" fill="#ffe58a">Prefer EC2 instance roles in production</text>
+ <path d="M360,100 C500,40 650,30 790,85" stroke="#ffd34d" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+ <path d="M790,150 L725,390" stroke="#ffd34d" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+ <text font-size="20">🔑<animateMotion dur="3s" repeatCount="indefinite"><mpath href="#p8a"/></animateMotion></text>
+ <text font-size="20">🔑<animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"><mpath href="#p8b"/></animateMotion></text>
+</g>
+
+<g class="s" data-s="9">
+ <rect x="560" y="150" width="150" height="60" rx="10" fill="#0f2f55" stroke="#4da3ff" stroke-width="2"/>
+ <text x="574" y="176" class="t" font-weight="800">AWS API (HTTPS)</text><text x="574" y="196" class="t">signed requests</text>
+ <path d="M600,345 L630,215" stroke="#ffd34d" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+ <path d="M710,180 L800,110" stroke="#ffd34d" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+ <text font-size="20">✉️<animateMotion dur="3s" repeatCount="indefinite"><mpath href="#p9a"/></animateMotion></text>
+ <text font-size="20">✉️<animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"><mpath href="#p9b"/></animateMotion></text>
+ <text x="720" y="262" font-size="26">✅</text><text x="752" y="260" class="t" fill="#8ff0c4">Identity verified</text>
+</g>
+
+<g class="s" data-s="10">
+ <path d="M710,205 C780,290 860,330 920,400" stroke="#3ddc97" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+ <path d="M850,470 L728,440" stroke="#3ddc97" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+ <text font-size="20">✉️<animateMotion dur="3s" repeatCount="indefinite"><mpath href="#p10a"/></animateMotion></text>
+ <text font-size="20">📄<animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"><mpath href="#p10b"/></animateMotion></text>
+ <rect x="20" y="380" width="360" height="86" rx="12" fill="#0f4a33" stroke="#3ddc97" stroke-width="3"/>
+ <text x="36" y="415" font-size="22" fill="#8ff0c4" font-weight="800">✅ SUCCESS</text>
+ <text x="36" y="445" class="t" fill="#fff" font-weight="800">AWS CLI SUCCESSFULLY ACCESSING AMAZON S3</text>
+ <rect x="20" y="486" width="360" height="104" rx="12" fill="#1a1f33" stroke="#7d8bb5"/>
+ <text x="36" y="512" class="t">🔍 Troubleshooting demo (use the panel below)</text>
+ <text id="tsIcon" x="36" y="550" font-size="26">❌</text>
+ <text id="tsMsg" x="76" y="548" class="t" fill="#ff8a8a">AccessDenied: add s3:ListAllMyBuckets</text>
+ <text x="36" y="576" class="t" fill="#9fc6ff">GUI creates · CLI manages · same S3</text>
+</g>
+</svg>
+    </div>
+    <section id="cap" aria-live="polite"></section>
+    <details id="ts"><summary>Troubleshooting guide</summary>
+      <ul>
+        <li><code>aws: command not found</code>: CLI not installed or not in PATH. Run <code>aws --version</code>.</li>
+        <li><code>Unable to locate credentials</code>: run <code>aws configure</code> or attach an EC2 IAM role.</li>
+        <li><code>AccessDenied</code>: the IAM user lacks the needed S3 permission.</li>
+        <li><code>InvalidAccessKeyId</code>: Access Key ID is wrong or inactive; check IAM.</li>
+        <li><code>SignatureDoesNotMatch</code>: secret key or configuration is wrong; re-run <code>aws configure</code>.</li>
+        <li>Network failure: check internet access, route table, security group and NACL outbound rules.</li>
+        <li>Wrong Region: check <code>aws configure get region</code>; S3 listing is global, but bucket operations use Regions.</li>
+      </ul>
+      <button id="fix">Simulate fix: red request → green request</button>
+    </details>
+    <section class="legend"><h2>Legend</h2>
+      <p>🖱️ GUI navigation · 📦 AWS CLI package · 🔑 IAM credentials · 🛡️ IAM security · ✉️ AWS API request · 📄 successful response · ❌ failure · ✅ success · 🔍 troubleshooting. Blue = Console and network, orange = EC2, purple = CLI, gold = credentials, green = success, red = error.</p>
+    </section>
+  </main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
